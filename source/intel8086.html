@@ -1,0 +1,129 @@
+<!-- Michał Pajerski 1 rok Informatyka Stosowana -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symulator Procesora 8086</title>
+    <link rel="stylesheet" href="intel8086.css">
+    <link rel="shortcut icon" href="ikona.png">
+</head>
+<body>
+    <h1>Symulator Procesora 8086</h1>
+    <div class="okno">
+        <div class="registers">
+            <div class="rejestry">
+              <h2>Rejestry</h2>
+              <div class="resetrandom">
+                <button onclick="randomizeRegisters()">Random</button>
+                <button onclick="resetRegisters()">Reset</button>
+              </div>
+              <div class="register">
+                  <label for="ax">AX:</label>
+                  <input id="ax" type="text" value="0000">
+              </div>
+              <div class="register">
+                  <label for="bx">BX:</label>
+                  <input id="bx" type="text" value="0000">
+              </div>
+              <div class="register">
+                  <label for="cx">CX:</label>
+                  <input id="cx" type="text" value="0000">
+              </div>
+              <div class="register">
+                  <label for="dx">DX:</label>
+                  <input id="dx" type="text" value="0000">
+              </div>
+            </div>
+            <h2>Instrukcje</h2>
+            <div class="instrukcje">
+              
+                <div class="sd">
+                  <div class="s">
+                      <label for="source">Źródłowy:</label>
+                      <select id="source">
+                          <option value="ax">AX</option>
+                          <option value="bx">BX</option>
+                          <option value="cx">CX</option>
+                          <option value="dx">DX</option>
+                      </select>
+                  </div>
+                  <div class="d">
+                      <label for="destination">Docelowy:</label>
+                      <select id="destination">
+                          <option value="ax">AX</option>
+                          <option value="bx">BX</option>
+                          <option value="cx">CX</option>
+                          <option value="dx">DX</option>
+                      </select>
+                  </div>
+                </div>
+                <div class="movxchg">
+                  <button onclick="executeMov()">MOV</button>
+                  <button onclick="executeXchg()">XCHG</button>
+                </div>
+            </div>
+        </div>
+        <div class="memory">
+            <h2>Adresowanie pamięci</h2>
+            <div class="resetrandom">
+                <button onclick="randomizeMemory()">Random</button>
+                <button onclick="resetMemory()">Reset</button>
+            </div>
+            <div class="mem">
+                <label for="bx">BX:</label>
+                <input id="bx" type="text" value="0000" oninput="validateHexInput(this)">
+            </div>
+            <div class="mem">
+                <label for="bp">BP:</label>
+                <input id="bp" type="text" value="0000" oninput="validateHexInput(this)">
+            </div>
+            <div class="mem">
+                <label for="si">SI:</label>
+                <input id="si" type="text" value="0000" oninput="validateHexInput(this)">
+            </div>
+            <div class="mem">
+                <label for="di">DI:</label>
+                <input id="di" type="text" value="0000" oninput="validateHexInput(this)">
+            </div>
+            <div class="mem">
+                <label for="offset">Offset:</label>
+                <input id="offset" type="text" value="0000" oninput="validateHexInput(this)">
+            </div>
+            <div class="mem">
+                <label for="memoryValue">Wartość w pamięci:</label>
+                <input id="memoryValue" type="text" value="0000" oninput="validateHexInput(this)">
+            </div>
+            <div>
+                <select id="addressingMode">
+                    <option value="base">Bazowe</option>
+                    <option value="index">Indeksowe</option>
+                    <option value="baseIndex">Indeksowo-bazowe</option>
+                </select>
+                <button onclick="movToRegister()">MOV z pamięci do rejestru</button>
+                <button onclick="movToMemory()">MOV z rejestru do pamięci</button>
+                <button onclick="xchgMemory()">XCHG pamięci z rejestrem</button>
+            </div>
+        </div>
+        <div class="stack-operations">
+            <h2>Stos</h2>
+            <div>
+                <label for="stackRegister">Wybierz rejestr:</label>
+                <select id="stackRegister">
+                    <option value="ax">AX</option>
+                    <option value="bx">BX</option>
+                    <option value="cx">CX</option>
+                    <option value="dx">DX</option>
+                </select>
+            </div>
+            <div>
+                <button onclick="executePush()">PUSH</button>
+                <button onclick="executePop()">POP</button>
+            </div>
+            <div id="stackDisplay">Stos jest pusty</div>
+        </div>
+    </div>
+    <script src="intel8086.js"></script>
+</body>
+</html>

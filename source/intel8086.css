@@ -1,0 +1,172 @@
+/* Michał Pajerski 1 rok Informatyka Stosowana */
+
+body {
+    font-family: roboto, sans-serif;
+    margin: 20px;
+    background-color: #f0f0f0;
+}
+
+.okno {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    border: 5px inset black;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 1280px;
+    height: 720px;
+}
+.registers {
+  width: 400px;
+  height: 700px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  flex-direction: column;
+  border: 2px solid black;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.rejestry {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.instrukcje {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around
+}
+
+.resetrandom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.movxchg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sd {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: large;
+  font-weight: bold;
+}
+
+h1, h3, h2 {
+  text-align: center;
+}
+
+.s, .d {
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.register {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: large;
+}
+
+.register label {
+    margin-right: 50px;
+    font-weight: bold;
+}
+
+.register input {
+    width: 60px;
+    text-align: center;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: white;
+}
+
+.operation {
+    margin-top: 20px;
+    text-align: center;
+    border: 5px groove black;
+}
+
+.operation select {
+    margin: 10px;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.operation button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.memory {
+    text-align: center;
+    width: 400px;
+    height: 700px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.memory div {
+    margin: 10px;
+}
+
+.memory label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.memory input {
+    width: 80px;
+    text-align: center;
+}
+
+.memory button, .memory select {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.stack-operations {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    text-align: center;
+    width: 400px;
+    height: 700px;
+    border: 2px solid black;
+    border-radius: 5px;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+#stackDisplay {
+    line-height: 50px;
+}
